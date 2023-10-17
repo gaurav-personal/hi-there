@@ -70,7 +70,7 @@ jobs:
       with:
         name: artifacts
     
-    - name: Deploy to DEV
+    - name: Deploy to Dev
       env:
         USERNAME: ${{ secrets.USERNAME }}
         PASSWORD: ${{ secrets.PASSWORD }}
