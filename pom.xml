@@ -30,25 +30,37 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				  <configuration>
-    				<cloudhub2Deployment>
-      					  <uri>https://anypoint.mulesoft.com</uri>
-					      <provider>MC</provider>
-					      <environment>DEV</environment>
-					      <target>cloudhub-us-east-2</target>
-					      <muleVersion>4.4.0</muleVersion>
-					      <server>ca.anypoint.credentials</server>
-					      <applicationName>hi-there-dev</applicationName>
-					      <replicas>1</replicas>
-					      <vCores>0.1</vCores>
-						  <skipDeploymentVerification>${skipDeploymentVerification}</skipDeploymentVerification>
-					      <integrations>
-								<services>
-									<objectStoreV2>
-										<enabled>true</enabled>
-									</objectStoreV2>
-								</services>
-						  </integrations>
-					</cloudhub2Deployment>
+<!--     				<cloudhub2Deployment> -->
+<!--       					  <uri>https://anypoint.mulesoft.com</uri> -->
+<!-- 					      <provider>MC</provider> -->
+<!-- 					      <environment>DEV</environment> -->
+<!-- 					      <target>cloudhub-us-east-2</target> -->
+<!-- 					      <muleVersion>4.4.0</muleVersion> -->
+<!-- 					      <server>ca.anypoint.credentials</server> -->
+<!-- 					      <applicationName>hi-there-dev</applicationName> -->
+<!-- 					      <replicas>1</replicas> -->
+<!-- 					      <vCores>0.1</vCores> -->
+<!-- 						  <skipDeploymentVerification>${skipDeploymentVerification}</skipDeploymentVerification> -->
+<!-- 					      <integrations> -->
+<!-- 								<services> -->
+<!-- 									<objectStoreV2> -->
+<!-- 										<enabled>true</enabled> -->
+<!-- 									</objectStoreV2> -->
+<!-- 								</services> -->
+<!-- 						  </integrations> -->
+<!-- 					</cloudhub2Deployment> -->
+					<cloudHubDeployment>
+						<uri>https://anypoint.mulesoft.com</uri>
+						<muleVersion>4.4.0</muleVersion>
+						<username>${anypoint.username}</username>
+						<password>${anypoint.password}</password>
+						<applicationName>hi-there-dev</applicationName>
+						<environment>DEV</environment>
+						<workerType>MICRO</workerType>
+						<region>us-east-2</region>
+						<workers>1</workers>
+						<objectStoreV2>true</objectStoreV2>
+					</cloudHubDeployment>
 				</configuration>
 			</plugin>
 		</plugins>
