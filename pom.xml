@@ -29,26 +29,26 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
-				  <configuration>
-<!--     				<cloudhub2Deployment> -->
-<!--       					  <uri>https://anypoint.mulesoft.com</uri> -->
-<!-- 					      <provider>MC</provider> -->
-<!-- 					      <environment>DEV</environment> -->
-<!-- 					      <target>cloudhub-us-east-2</target> -->
-<!-- 					      <muleVersion>4.4.0</muleVersion> -->
-<!-- 					      <server>ca.anypoint.credentials</server> -->
-<!-- 					      <applicationName>hi-there-dev</applicationName> -->
-<!-- 					      <replicas>1</replicas> -->
-<!-- 					      <vCores>0.1</vCores> -->
-<!-- 						  <skipDeploymentVerification>${skipDeploymentVerification}</skipDeploymentVerification> -->
-<!-- 					      <integrations> -->
-<!-- 								<services> -->
-<!-- 									<objectStoreV2> -->
-<!-- 										<enabled>true</enabled> -->
-<!-- 									</objectStoreV2> -->
-<!-- 								</services> -->
-<!-- 						  </integrations> -->
-<!-- 					</cloudhub2Deployment> -->
+				<configuration>
+					<!--     				<cloudhub2Deployment> -->
+					<!--       					  <uri>https://anypoint.mulesoft.com</uri> -->
+					<!-- 					      <provider>MC</provider> -->
+					<!-- 					      <environment>DEV</environment> -->
+					<!-- 					      <target>cloudhub-us-east-2</target> -->
+					<!-- 					      <muleVersion>4.4.0</muleVersion> -->
+					<!-- 					      <server>ca.anypoint.credentials</server> -->
+					<!-- 					      <applicationName>hi-there-dev</applicationName> -->
+					<!-- 					      <replicas>1</replicas> -->
+					<!-- 					      <vCores>0.1</vCores> -->
+					<!-- 						  <skipDeploymentVerification>${skipDeploymentVerification}</skipDeploymentVerification> -->
+					<!-- 					      <integrations> -->
+					<!-- 								<services> -->
+					<!-- 									<objectStoreV2> -->
+					<!-- 										<enabled>true</enabled> -->
+					<!-- 									</objectStoreV2> -->
+					<!-- 								</services> -->
+					<!-- 						  </integrations> -->
+					<!-- 					</cloudhub2Deployment> -->
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
 						<muleVersion>4.4.0</muleVersion>
@@ -66,14 +66,14 @@
 		</plugins>
 	</build>
 
-  <distributionManagement>
-    <repository>
-      <id>ca.anypoint.credentials</id>
-      <name>Corporate Repository</name>
-      <url>https://maven.anypoint.mulesoft.com/api/v3/organizations/${project.groupId}/maven</url>
-      <layout>default</layout>
-    </repository>
-  </distributionManagement>
+	<distributionManagement>
+		<repository>
+			<id>ca.anypoint.credentials</id>
+			<name>Corporate Repository</name>
+			<url>https://maven.anypoint.mulesoft.com/api/v3/organizations/${project.groupId}/maven</url>
+			<layout>default</layout>
+		</repository>
+	</distributionManagement>
 
 	<dependencies>
 		<dependency>
@@ -86,12 +86,6 @@
 			<groupId>org.mule.connectors</groupId>
 			<artifactId>mule-sockets-connector</artifactId>
 			<version>1.2.2</version>
-			<classifier>mule-plugin</classifier>
-		</dependency>
-		<dependency>
-			<groupId>858e57a1-1624-4622-be81-041ea6c365bd</groupId>
-			<artifactId>json-logger</artifactId>
-			<version>2.1.0</version>
 			<classifier>mule-plugin</classifier>
 		</dependency>
 	</dependencies>
