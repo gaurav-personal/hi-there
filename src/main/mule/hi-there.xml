@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="d7a1d256-21dc-4502-bfdd-e823d01217ca" >
+		<http:listener-connection host="0.0.0.0" port="${http.port}" readTimeout="${http.read-timeout}" />
+	</http:listener-config>
+	<configuration-properties doc:name="Configuration properties" doc:id="85af2dc3-7d92-441d-93fe-c0251ae5cc71" file="config\hi-there-properties-${env}.yaml" />
+	<configuration-properties doc:name="Configuration properties" doc:id="b4ddcd0f-4d57-43b3-bc1c-f04013027b73" file="config\hi-there-properties-common.yaml" />
+	<global-property doc:name="Global Property" doc:id="9c23480b-b42e-4679-bff0-e560a731aff0" name="env" value="dev" />
+	<flow name="hi-thereFlow" doc:id="8f7f83f4-0dea-4245-8b4b-575edce1294b" >
+		<http:listener doc:name="Listener" doc:id="875298ef-f896-44b9-8b41-981dbd45646b" path="${http.listener.path}" config-ref="HTTP_Listener_config"/>
+		<set-payload value="#['Hi ' ++ attributes.queryParams.name as String ++ ' from ' ++ p('env') as String ++ ' env']" doc:name="Set Payload" doc:id="29068030-5f14-48b4-9e9a-1ef222f8dcb0" />
+		<logger level="INFO" doc:name="Logger" doc:id="f9bb9b06-daab-41d3-a532-c2517d137de9" message="#[payload]"/>
+	</flow>
+</mule>

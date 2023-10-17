@@ -1,0 +1,6 @@
+# HTTP Ports
+http:
+    port: "8081"
+    read-timeout: "30000"
+    listener:
+      path: "/v1/*"

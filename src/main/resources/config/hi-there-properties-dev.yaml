@@ -1,0 +1,38 @@
+env: "DEV"
+
+api:
+  instance: "18669114"
+  
+# Database Configuration
+db:
+    host: "12.196.228.140"
+    port: "1433"
+    user: "Apisero"
+    password: "![7MnclE0gKRYRMkXQGPOgdw==]"
+    database: "mas500_app"
+    reconnection:
+      frequency: "2000"
+      attempts: "3"
+    pooling:
+      maxPoolSize: "5"
+      minPoolSize: "5"
+      acquireIncrement: "1"
+      cacheSize: "5"
+      maxWait: "3"
+      maxIdleTimeout: "0"
+      maxStatements: "0"
+ 
+# SSL Configuration
+https:   
+    tls:
+      path: "certs/server-keystore.jks"
+      password: "![bahITX4c1FltXOFIckodfA==]"
+      keyPassword: "![bahITX4c1FltXOFIckodfA==]"
+      
+smtp:
+  host: "![Loczd4Cpp+zXgIrPb9gFncPeux/gmbUu]"
+  port: "![dBiYdRvbgZ4=]"
+  username: "![Y6H8YoCZNFlDFu+E0tqkpATotrVFhWkRtNY8p7t17fcw/pCyBWmeVw==]"
+  password: "![B0XcoHqrehSF6zMHborJRg==]"
+  fromName:  "![Y6H8YoCZNFlDFu+E0tqkpATotrVFhWkRtNY8p7t17fcw/pCyBWmeVw==]"
+  toName: "![xZV09Mp3YskohR3bZcRprA==]"
