@@ -66,8 +66,8 @@
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
 						<muleVersion>4.4.0</muleVersion>
-						<connectedAppClientId>CONN_APP_CLIENT_ID</connectedAppClientId>
-						<connectedAppClientSecret>CONN_APP_CLIENT_SECRET</connectedAppClientSecret>
+						<connectedAppClientId>${CONN_APP_CLIENT_ID}</connectedAppClientId>
+						<connectedAppClientSecret>${CONN_APP_CLIENT_SECRET}</connectedAppClientSecret>
 						<connectedAppGrantType>client_credentials</connectedAppGrantType>
 						<applicationName>hi-there-dev</applicationName>
 						<businessGroup>SubBG1</businessGroup>
