@@ -49,13 +49,29 @@
 					<!-- 								</services> -->
 					<!-- 						  </integrations> -->
 					<!-- 					</cloudhub2Deployment> -->
+
+<!-- 					<cloudHubDeployment> -->
+<!-- 						<uri>https://anypoint.mulesoft.com</uri> -->
+<!-- 						<muleVersion>4.4.0</muleVersion> -->
+<!-- 						<username>${anypoint.username}</username> -->
+<!-- 						<password>${anypoint.password}</password> -->
+<!-- 						<applicationName>hi-there-dev</applicationName> -->
+<!-- 						<businessGroup>SubBG1</businessGroup> -->
+<!-- 						<environment>Dev</environment> -->
+<!-- 						<workerType>MICRO</workerType> -->
+<!-- 						<region>us-east-2</region> -->
+<!-- 						<workers>1</workers> -->
+<!-- 						<objectStoreV2>true</objectStoreV2> -->
+<!-- 					</cloudHubDeployment> -->
+					
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
 						<muleVersion>4.4.0</muleVersion>
-						<username>${anypoint.username}</username>
-						<password>${anypoint.password}</password>
+						<connectedAppClientId>CONN_APP_CLIENT_ID</connectedAppClientId>
+                		<connectedAppClientSecret>CONN_APP_CLIENT_SECRET</connectedAppClientSecret>
+                		<connectedAppGrantType>client_credentials</connectedAppGrantType>
 						<applicationName>hi-there-dev</applicationName>
-						<businessGroup>SubBG1</businessGroup> 
+						<businessGroup>SubBG1</businessGroup>
 						<environment>Dev</environment>
 						<workerType>MICRO</workerType>
 						<region>us-east-2</region>
@@ -87,6 +103,12 @@
 			<groupId>org.mule.connectors</groupId>
 			<artifactId>mule-sockets-connector</artifactId>
 			<version>1.2.2</version>
+			<classifier>mule-plugin</classifier>
+		</dependency>
+		<dependency>
+			<groupId>com.mulesoft.connectors</groupId>
+			<artifactId>mule-smb-connector</artifactId>
+			<version>3.1.1</version>
 			<classifier>mule-plugin</classifier>
 		</dependency>
 	</dependencies>
