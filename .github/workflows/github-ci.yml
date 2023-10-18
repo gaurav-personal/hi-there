@@ -72,12 +72,12 @@ jobs:
     
     - name: Deploy to Dev
       env:
-        CA_C_ID: ${{ secrets.CA_CLIENT_ID }}
-        CA_C_SECRET: ${{ secrets.CA_CLIENT_SECRET }}
+        CONN_APP_CLIENT_ID: ${{ secrets.CA_CLIENT_ID }}
+        CONN_APP_CLIENT_SECRET: ${{ secrets.CA_CLIENT_SECRET }}
       run: |
         artifactName=$(ls *.jar | head -1)
         mvn deploy -DmuleDeploy \
          -Dmule.artifact=$artifactName \
-         -DCONN_APP_CLIENT_ID="$CA_C_ID" \
-         -DCONN_APP_CLIENT_SECRET="$CA_C_SECRET" \
+         -DCONN_APP_CLIENT_ID="$CONN_APP_CLIENT_ID" \
+         -DCONN_APP_CLIENT_SECRET="$CONN_APP_CLIENT_SECRET" \
          -DskipTests
